@@ -5,13 +5,13 @@ from random import *
 
 correctNum = randint(1, 100)
 
-# print (correctNum)
+print (correctNum)
 
 tryNum = 0
 running = True
 while running:
     # Prompt for user's guess
-    print ("Enter an integer from 1 to 100 \nEnter '-1' to quit")
+    print ("Enter an integer from 1 to 100 \nEnter '-1' to quit\n")
 
     # Input user's guess
     guessNum = int(input())
@@ -22,36 +22,33 @@ while running:
 
     # Check how close user's guess is to correct
     if guessNum == -1:
-        output = "Quit"
+        output = "\nThanks for playing!"
         running = False
 
     elif guessNum > 100:
-        output = "Too High"
+        output = "\nWAY TOO BIG!\n"
 
     elif guessNum == correctNum:
-        output = "You guessed it!"
+        output = "\nYOU GUESSED IT!\n"
         running = False
 
     elif 1 <= abs(diff) <= 5:
-        output = "HOT"
+        output = "\nHOT\n"
 
     elif 5 <= abs(diff) <= 10:
-        output = "VERY WARM"
+        output = "\nVERY WARM\n"
 
     elif 10 <= abs(diff) <= 20:
-        output = "WARM"
+        output = "\nWARM\n"
 
     elif 20 <= abs(diff) <= 40:
-        output = "LUKEWARM"
+        output = "\nKINDA WARM\n"
 
     elif 40 <= abs(diff) <= 100:
-        output = "COLD"
+        output = "\nCOLD\n"
 
     print (output)
 
-print (tryNum)
-
-
-
-
+if guessNum != -1:
+    print (".. and it only took " + str(tryNum) + " guesses!")
 
