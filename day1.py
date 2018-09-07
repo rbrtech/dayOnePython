@@ -5,8 +5,6 @@ from random import *
 
 correctNum = randint(1, 100)
 
-print (correctNum)
-
 tryNum = 0
 running = True
 while running:
